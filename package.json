@@ -1,0 +1,30 @@
+{
+  "name": "skyline",
+  "version": "1.0.0",
+  "description": "This project helps to book tickets for AirLine Reservation System",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "skyline",
+    "reservation",
+    "database",
+    "online"
+  ],
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.15.2",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.5.2",
+    "express": "^4.14.0",
+    "express-session": "^1.14.2",
+    "mysql": "^2.12.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "short-uuid": "^2.3.4",
+    "wait.for": "^0.6.6",
+    "winston": "^2.3.0"
+  }
+}

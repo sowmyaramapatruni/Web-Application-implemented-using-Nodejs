@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+</style>
+</head>
+  <body>
+    <div class='row sc-results-header'>
+    <div class="col-xs-1 sc-results-header-item">Airline</div>
+    <div class="col-xs-1 sc-results-header-item">Flight #</div>
+    <div class="col-xs-3 sc-results-header-item">Source</div>
+    <div class="col-xs-3 sc-results-header-item">Destination</div>
+    <!--
+    <div class="col-xs-1 sc-results-header-item">Duration</div>
+    <div class="col-xs-1 sc-results-header-item">Stops</div>
+    -->
+    <div class="col-xs-3 sc-results-header-item">Booking ID</div>
+    <!--
+    <div class="col-xs-1 sc-results-header-item">Fare</div>
+    -->
+    <div class="col-xs-1 sc-results-header-item">&nbsp;</div>
+  </div>
+
+    <% for(var i = 0 ;i < cancel_result_data.length; i++){%>
+
+<div class='row sc-results-entry'>
+
+    <div class='col-sm-1 sc-results-item'><%= cancel_result_data[i]['airline'] %></div>
+    <div class='col-sm-1 sc-results-item flight-id'><%= cancel_result_data[i]['flight_id'] %></div>
+
+    <div class= 'col-sm-6'>
+      <div class = 'row'>
+        <div class = 'col-sm-5 sc-results-item city'><%= cancel_result_data[i]['sourceIATA'] %></div>
+        <div class = 'col-sm-2 sc-results-item'><i class="glyphicon glyphicon-arrow-right"></i></div>
+        <div class = 'col-sm-5 sc-results-item city'><%= cancel_result_data[i]['destinationIATA'] %></div>
+      </div>
+      <div class = 'row'>
+        <div class = 'col-sm-5 sc-results-item timings'><%= cancel_result_data[i]['departDate']%>, <%= cancel_result_data[i]['departure_time']%></div>
+        <div class = 'col-sm-2 sc-results-item'>&nbsp;</div>
+        <div class = 'col-sm-5 sc-results-item timings'><%= cancel_result_data[i]['arrivalDate']%>, <%= cancel_result_data[i]['arrival_time']%></div>
+      </div>
+    
+      </div>
+   
+      <div class='col-sm-3 sc-results-item'><%= cancel_result_data[i]['BOOKING_ID'] %></div>
+     <% if(cancel_result_data[i]['status']== 'BOOKED'){ %>
+    <div class='col-sm-1'>
+      <button type="button" id = <%= cancel_result_data[i]['BOOKING_ID'] %> class=".btn-group-sm sc-results-item sf-submit cancel_button" >Cancel</button>
+    </div>
+    <% }else{ %>
+
+      <div class='col-sm-1'>
+      <button type="button" diabled id = <%= cancel_result_data[i]['BOOKING_ID'] %> class=".btn-group-sm sc-results-item sf-submit cancel_button" style="visibility:hidden;"  >Cancel</button>
+    </div>
+
+    <% } %>
+</div>
+
+<% } %>
+
+  <div class="modal fade" id="cancel_myModal" role="dialog">
+   <div class="modal-dialog">
+
+
+     <div class="modal-content">
+       <div class="modal-body">
+                
+                <h2> Cancellation Done sucessfully <h2>
+
+       <div class="modal-footer">
+         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       </div>
+     </div>
+
+   </div>
+ </div>
+</div>
+
+<script>
+  $(document).ready(function(){
+      var button_id;
+      $(".cancel_button").click(function(){
+          console.log("button clicked");
+          button_id = $(this).attr("id");
+          console.log("Assuming the id is "+button_id);
+          
+          httpPostAsync("/skyline/cancel",{"booking_id":button_id},function(){
+            $("#cancel_myModal").modal();
+          })
+      });      
+  });
+  function httpPostAsync(theUrl, data, callback){
+             var xmlHttp = new XMLHttpRequest();
+             xmlHttp.onreadystatechange = function(){ 
+            if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+                 callback(xmlHttp.responseText);
+            }
+            xmlHttp.open("POST", theUrl, true); // true for asynchronous 
+            xmlHttp.setRequestHeader("Content-type", "application/json");
+            xmlHttp.send(JSON.stringify(data));
+      }
+
+  </script>
+  </body>
+
+</html>

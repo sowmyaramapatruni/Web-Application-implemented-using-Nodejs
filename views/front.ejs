@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Skyline Tickets</title>
+
+  <!-- Bootstrap -->
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+
+  <!-- Main CSS -->
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://cdn.rawgit.com/vast-engineering/jquery-popup-overlay/1.7.13/jquery.popupoverlay.js"></script>
+  <script src="../js/frontend.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="../stylesheets/style_sheet.css" type="text/css">
+</head>
+<body>
+  <div class="site-wrapper">
+    <div class="site-wrapper-inner">
+      <div class="cover-container">
+        <div class="masthead clearfix">
+          <div class="inner">
+            <nav>
+                <ul class="nav masthead-nav">
+                    <li><input type = "button" class="sf-home" value="Home"></li>
+                    <li><input type="button" class="sf-cancel" value= "Booking History"> </li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="/skyline"></a><input type = "button" class="sf-logout" value="Logout"></li>
+                </ul>
+            </nav>
+          </div>
+        </div>
+        <!-- Main Content Starts here -->
+        <div class="row cover" style="position: absolute;top:55px;bottom:10px;left:10px;right:10px;">
+
+          <div class="search-flights">
+            <div class="sf-content" id="round">
+              <form action="#">
+                <div class="row trip-type">
+                  <div class="col-sm-12">
+                    <label class="control control--radio" style="color: Black;" >ROUND TRIP
+                      <input type="radio" name="tripType" value="round" checked="checked">
+                      <div class="control__indicator"></div>
+                    </label>
+                    <label class="control control--radio" style="color: Black;">ONE WAY
+                      <input type="radio" name="tripType" value="oneway">
+                      <div class="control__indicator"></div>
+                    </label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-3" style="color: Black;">
+                    <input type="text" style="color: Black;" name="source" id="source" class="cities-autofill"  placeholder="Enter Source">
+                  </div>
+                  <div class="col-sm-3">
+                    <input type="text" name="destination" id="destination" class="cities-autofill" placeholder="Enter Destination">
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="form-group has-feedback">
+                      <input type="text" id="departDate" name="departDate" class="form-control date-picker" placeholder="Depart Date">
+                      <i class="form-control-feedback glyphicon glyphicon-calendar"></i>
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="form-group has-feedback returnDateContainer">
+                      <input type="text" id="returnDate" name="returnDate" class="form-control date-picker" placeholder="Return Date">
+                      <i class="form-control-feedback glyphicon glyphicon-calendar"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-6">
+                      <div class="pass">
+                          <div class="pass_type" style="color: Black;">
+                              Adults <span style="font-size: 0.7em; font-style: italic">(13+ Yrs)</span>
+                          </div>
+                          <div class="pass_count">
+                              <input type="button" value="+" class="inc" id = "inc_a">
+                              <input type="text" value="0" class="num" id = "num_a" name="adults" style="color: Black;">
+                              <input type="button" value="-" class="dec" id = "dec_a">
+                          </div>
+                      </div>
+                      <div class="pass">
+                          <div class="pass_type" style="color: Black;">
+                              Children <span style="font-size: 0.7em; font-style: italic">(3-11 Yrs)</span>
+                          </div>
+                          <div class="pass_count">
+                              <input type="button" value="+" class="inc" id="inc_c">
+                              <input type="text" value="0" class="num" id="num_c" name="children" style="color: Black;">
+                              <input type="button" value="-" class="dec" id="dec_c">
+                          </div>
+                      </div>
+                      <div class="pass">
+                          <div class="pass_type" style="color: Black;">
+                              Infants <span style="font-size: 0.7em; font-style: italic">(0-3 Yrs)</span>
+                          </div>
+                          <div class="pass_count">
+                              <input type="button" value="+" class="inc" id="inc_f">
+                              <input type="text" value="0" class="num" id="num_f" name="infants" style="color: Black;">
+                              <input type="button" value="-" class="dec" id="dec_f">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="pass_type" style="margin: 10px 0px 5px 0px;color:Black;">Select Class</div>
+                    <select class="flight-class" name="flightClass" id="flight-class">
+                      <option selected="selected">Economy</option>
+                      <option>Premium Economy</option>
+                      <option>First Class</option>
+                    </select>
+                  </div>
+                  <div class="col-sm-3">
+                    <button class="sf-submit" style="position: absolute;top:74px;bottom: -146px;right: 500px;">
+                      Search Tickets &nbsp;
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="sf-modify">
+            Search Again
+            <i class="glyphicon glyphicon-chevron-up"></i>
+          </div>
+          <div class="sf-results">
+            Please Wait for the results to be displayed
+          </div>
+          
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+
+</body>
+</html>

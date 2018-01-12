@@ -1,0 +1,288 @@
+
+<html>
+
+<head>
+	<link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<link rel="stylesheet" href="style_sheet.css">
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<!--
+  <script src="jquery-1.11.1.js"></script>
+  <script src="jquery-ui-1.11.1.custom/jquery-ui.js"></script>
+  -->
+
+	<link href="stylesheets/login_stylesheet.css" rel="stylesheet">
+	<link href="stylesheets/navigation_stylesheet.css" rel="stylesheet">
+	<script>
+        function httpGetAsync(theUrl, callback){
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.onreadystatechange = function(){
+                if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+                    callback(xmlHttp.responseText);
+            }
+            xmlHttp.open("GET", theUrl, true); // true for asynchronous 
+            xmlHttp.send(null);
+        }
+        $(function() {
+            $('#login-form-link').click(function(e) {
+                $("#login-form").delay(100).fadeIn(100);
+                $("#register-form").fadeOut(100);
+                $('#register-form-link').removeClass('active');
+                $(this).addClass('active');
+                e.preventDefault();
+            });
+            $('#register-form-link').click(function(e) {
+                $("#register-form").delay(100).fadeIn(100);
+                $("#login-form").fadeOut(100);
+                $('#login-form-link').removeClass('active');
+                $(this).addClass('active');
+                e.preventDefault();
+            });
+
+
+
+        });
+	</script>
+</head>
+
+<body>
+<div class="container-fluid"  id= "container-fuild-id">
+	<!-- Second navbar for profile settings -->
+	<nav class="navbar navbar-inverse" id="nav_id">
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-4">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#"></a>
+
+				<nav class="navbar navbar-inverse" id="nav_id">
+					<div class="container">
+						<div class="collapse navbar-collapse" id="navbar-collapse-4">
+							<ul class="nav navbar-nav navbar-left">
+								<li><a href="#">Home</a></li>
+								<li><a href="https://www.hotels.com/">Hotels</a></li>
+								<li><a href="https://news.google.com/news/?gl=US&ned=us&hl=en" class="external">News</a></li>
+								<li><a href="new%205.html">Contact</a></li>
+								<li><a href="https://www.uber.com/" class="external">Cabs</a></li>
+
+							</ul>
+						</div>
+					</div>>
+				</nav>
+
+
+
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+
+				<div id="myCarousel" class="carousel slide" data-ride="carousel">
+					<!-- Indicators -->
+					<ol class="carousel-indicators">
+						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+						<li data-target="#myCarousel" data-slide-to="1"></li>
+						<li data-target="#myCarousel" data-slide-to="2"></li>
+						<li data-target="#myCarousel" data-slide-to="3"></li>
+						<li data-target="#myCarousel" data-slide-to="4"></li>
+						<li data-target="#myCarousel" data-slide-to="5"></li>
+
+					</ol>
+
+					<div class="carousel-inner">
+						<div class="item active">
+							<center>
+								<img src="http://4.bp.blogspot.com/-QDVLWeV37eE/UQfk8EuLPjI/AAAAAAAAiOE/s6VI1zG6A3Q/s1600/paris-night-129117.jpg" alt="Paris" style="width:75%;">
+							</center>
+						</div>
+
+						<div class="item">
+							<center>
+								<img src="http://images1.fanpop.com/images/image_uploads/Times-Square-new-york-1151917_1024_768.jpg" alt="New York" style="width:75%;">
+							</center>>
+						</div>
+
+
+						<div class="item">
+							<center>
+								<img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Taj_Mahal.png" alt="India" style="width:75%;">
+							</center>>
+						</div>
+
+						<div class="item">
+							<center>
+								<img src="http://airpano.ru/files/Dubai-UAE-Best/images/image1.jpg" alt="Dubai" style="width:75%;">
+							</center>>
+						</div>
+
+
+						<div class="item">
+							<center>
+								<img src="http://static.asiawebdirect.com/m/bangkok/portals/bali-indonesia-com/homepage/magazine/10-best-pool-hotels/pagePropertiesImage/The-St.-Regis-Resort.jpg" alt="Bali" style="width:75%;">
+							</center>>
+						</div>
+
+
+						<div class="item">
+							<center>
+								<img src="http://www.innov8tiv.com/wp-content/uploads/2014/04/z36.jpg" alt="India" style="width:75%;">
+							</center>>
+						</div>
+
+					</div>
+
+					<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+						<span class="glyphicon glyphicon-chevron-left"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="right carousel-control" href="#myCarousel" data-slide="next">
+						<span class="glyphicon glyphicon-chevron-right"></span>
+						<span class="sr-only">Next</span>
+					</a>
+
+
+					<ul class="collapse nav navbar-nav nav-collapse" role="search" id="nav-collapse4">
+						<li><a href="#">Support</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img class="img-circle" src="https://pbs.twimg.com/profile_images/588909533428322304/Gxuyp46N.jpg" alt="maridlcrmn" width="20" /> Maridlcrmn <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="#">My profile</a></li>
+								<li><a href="#">Favorited</a></li>
+								<li><a href="#">Settings</a></li>
+								<li class="divider"></li>
+								<li><a href="#">Logout</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container -->
+	</nav><!-- /.navbar -->
+</div><!-- /.container-fluid -->
+<div class="container-fluid"  id= "container-fuild-id">
+	<!-- Second navbar for profile settings -->
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<div class="panel panel-login">
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-xs-6">
+								<a href="#" class="active" id="login-form-link">Login</a>
+							</div>
+							<div class="col-xs-6">
+								<a href="#" id="register-form-link">Register</a>
+							</div>
+						</div>
+						<hr>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-lg-12">
+								<form id="login-form" action="skyline/login" method="post" role="form" style="display: block;">
+									<div class="form-group">
+										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+									</div>
+									<div class="form-group">
+										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+									</div>
+									<div class="form-group text-center">
+										<input type="checkbox" tabindex="3" class="" name="remember" id="remember">
+										<label for="remember"> Remember Me</label>
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-6 col-sm-offset-3">
+												<input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" id= "login_btn" value="Log In">
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-lg-12">
+
+											</div>
+										</div>
+									</div>
+								</form>
+								<form id="register-form" action="skyline/signup" method="post" role="form" style="display: none;">
+									<div class="form-group">
+										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+									</div>
+									<div class="form-group">
+										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
+									</div>
+									<div class="form-group">
+										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+									</div>
+									<div class="form-group">
+										<input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password">
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-6 col-sm-offset-3">
+												<input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now">
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="wrapper">
+		<div id="carousel">
+			<center>
+				<a href="http://localhost:3001/airlineReservation/search">
+					<img src="http://img.mmtcdn.com/mi8/images/slideshow/336X280_new-year_31102017.jpg" alt="e4" title="http://us.makemytrip.com/holidays-india?intid=USHPLP_Hero_DOMIndia_22092017" width="336" height="280" border="15">
+				</a>
+				<a href="http://localhost:3001/airlineReservation/search">
+					<img src="http://img.mmtcdn.com/mi8/images/slideshow/336X280_ParisUS_09112017.jpg" alt="e4" title="http://us.makemytrip.com/holidays-india?intid=USHPLP_Hero_OBTParis_16112017" width="336" height="280" border="0">
+				</a>>
+				<a href="http://localhost:3001/airlineReservation/search">
+					<img src="http://img.mmtcdn.com/mi8/images/slideshow/336X280_EuropeUS03_22052017.jpg" alt="e4" title="http://us.makemytrip.com/holidays/international/search?depCity=&amp;isDestHoliday=true&amp;selectedTabName=&amp;dest=Europe##page_header&amp;intid=USHPLP_Hero_OBTEurope_25052017" width="336" height="280" border="0">
+				</a>>
+				<a href="http://localhost:3001/airlineReservation/search">
+					<img src="http://imgak.mmtcdn.com/mi8/images/slideshow/336X280_US02_16032017.jpg" alt="e4" title="http://us.makemytrip.com/promotion/includes/USHolidays_offer-16092015.html?intid=USHPLP_Hero_obt_50off_18082015" width="336" height="280" border="0">
+				</a>>
+				<a href="http://localhost:3001/airlineReservation/search">
+					<img src="http://imgak.mmtcdn.com/mi8/images/slideshow/336X280_EuropeUS_17032017.jpg" alt="e4" title="http://us.makemytrip.com/holidays/international/search?depCity=&amp;isDestHoliday=true&amp;selectedTabName=&amp;dest=Europe&amp;?intid=USHPLP_Hero_obt_europe_01032016" width="336" height="280" border="0">
+				</a>>
+				<a href="http://localhost:3001/airlineReservation/search">
+					<img src="http://img.mmtcdn.com/mi8/images/slideshow/336x280-LPG-11062015.jpg" alt="e4" title="http://us.makemytrip.com/promotion/includes/LFG_offer-28052015.html?intid=USHPLP_Hero_IF-LPG_26052015" width="336" height="280" border="0">
+				</a>>
+
+			</center>
+		</div>
+		<div id="pager"></div>
+		<ul class="pagination">
+			<li><a href="#">1</a></li>
+			<li class="active"><a href="#">2</a></li>
+			<li><a href="#">3</a></li>
+
+			<<nav class="navbar fixed-top navbar-dark bg-solid">
+				<a class="navbar-brand" href="#">Go up</a>
+			</nav>
+
+		</ul>
+	</div>
+</body>
+
+</html>
+

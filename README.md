@@ -29,8 +29,24 @@ Install nodejs and mySql database server
 
 Change your database connectivity details in ./config/db_conf.js
 
+Update first database details in config_database1 and the other one in config_database2
+
 ## How to Run
 Run node application.js You change port in application.js
 
 open browser and hit http://ipaddress:port/skyline
+
+## Functional Requirements
+
+1. The registration page allows the user to register with email id and password, and to specify
+other contact details required for the registration.
+
+2. The login page allows the user to sign in with the user credentials.
+
+3. The search page allows the user to search for flights based on the source airport, destination
+airport, category, type of trip and date of trip. Only on successful login can a user search for
+flights.
+
+4. The search request should be redirected to the relevant database, based on if it’s a domestic
+flight or an international flight.
 
